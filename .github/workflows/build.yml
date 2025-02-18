@@ -39,6 +39,7 @@ jobs:
       - name: Build Sparrow
         run: |
           ./build.sh || eval $(opam env) && make -j
+          echo "cil: $(opam list | grep cil)"
 
       - name: Run test (regression)
         run: eval $(opam env) && make test
